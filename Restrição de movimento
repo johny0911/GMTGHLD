@@ -1,0 +1,9 @@
+//Restrição de Movimento
+if(x<32){
+    x=32;
+}
+if(x>288){
+    x=288;
+}
+
+// O game maker funciona como um plano cartesiano, se onde X é a vertical e Y é o horizontal 
