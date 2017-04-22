@@ -1,0 +1,27 @@
+//No Objeto start crie um evento "Mouse Left Down"
+
+room_goto(room_next(room_GamePlay)); //Coloque aqui o nome da room onde vai rolar o game
+
+//---------------------------------------------------------------------------------------
+
+////No Objeto Exit crie um evento "Mouse Left Down"
+
+game_end();
+
+//-------------------------------------------------------------------------------------
+
+//Vc vai criar um Obg_by com o spr_by, ele vai servi como Obj control pro menu. Crie um Evento Step nele.
+
+//Aperte Esc pra sair do jogo
+if (keyboard_check_pressed(vk_escape)) 
+{
+	game_end();
+}	
+
+//Aperte Enter para entrar no jogo
+if (keyboard_check_pressed(vk_enter)) 
+{
+	room_goto(room_next(room_GamePlay)); //Coloque aqui o nome da room onde vai rolar o game
+}
+
+//Fim do menu
