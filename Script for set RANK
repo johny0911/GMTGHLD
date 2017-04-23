@@ -1,0 +1,45 @@
+//NO OBJ_PLAYER
+ 
+ //CREAT
+    alarm[0] = 200; //esse numero é o tempo que vai levar pra fase acabar, 200 é rapido!
+  
+ //Alarm 0
+    //O que acontece qundo o tempo acaba
+    name = get_string("Name: ",""); 
+
+  	//Isso faz aparecer um caixa para colocar o nome do Jogador o nome dele vai ser guardado na varialvel "Name"
+
+    highscore_add(name,score);
+    //Essa função serve para adicionar a pontuação no Hiigh Score table  ou data
+
+    room_goto_next(); //passa para a proxima janela ou menu de Rank!
+    
+ //Draw GUI
+     draw_text(10,10,"Score: " + string(score))
+
+    //Isso vai desenhar a pontuaçao no jogo
+
+//OBJ_MENu 
+  
+  //Step
+    if(keyboard_check_pressed(vk_enter))
+      {
+      room_goto(room_1);
+      score = 0; 
+      } 
+
+    if(keyboard_check_pressed(vk_escape)){game_end();}
+    
+  //Draw Gui    
+    draw_text(640/2-100,480-64,"Press Enter To Start Again");
+    draw_text(640/2-100,480-32,"Press C To Clear Score");
+    draw_text(640/2-100,480,"Press ESC To Exit");
+
+    draw_highscore(40,80,600,400);
+    //parametros para a posição
+       
+  //Key UP - C
+    highscore_clear();
+    //to clean HighScore
+
+  
